@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /og-image.html
 
 Sitemap: https://maxfomichev-tech.github.io/Automation_gh/sitemap.xml
