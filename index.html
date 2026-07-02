@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Maxim Fomichev — automation: chatbots, dashboards, landing pages</title>
+<meta name="description" content="Chatbots, dashboards and landing pages that take the busywork off your plate. Bot replies in 3 seconds, dashboard updates in real time, landing captures leads 24/7. Live in 5 days.">
+<meta name="keywords" content="automation, chatbot, dashboard, landing page, business automation, WhatsApp bot, Telegram bot, CRM integration">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#15171C">
+<link rel="canonical" href="https://maxfomichev-tech.github.io/automation/">
+<meta property="og:title" content="Maxim Fomichev — automation: chatbots, dashboards, landing pages">
+<meta property="og:description" content="Chatbots, dashboards and landing pages that take the busywork off your plate. Live in 5 days.">
+<meta property="og:url" content="https://maxfomichev-tech.github.io/automation/">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://maxfomichev-tech.github.io/automation/og-image.png">
+<meta property="og:locale" content="en_US">
+<meta property="og:site_name" content="Maxim Fomichev">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Maxim Fomichev — automation: chatbots, dashboards, landing pages">
+<meta name="twitter:description" content="Chatbots, dashboards and landing pages that take the busywork off your plate. Live in 5 days.">
+<meta name="twitter:image" content="https://maxfomichev-tech.github.io/automation/og-image.png">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Maxim Fomichev",
+  "description": "Chatbots, dashboards and landing pages that take the busywork off your plate. Bot replies in 3 seconds, dashboard updates in real time, landing captures leads 24/7.",
+  "url": "https://maxfomichev-tech.github.io/automation/",
+  "email": "max.fomichev@gmail.com",
+  "telephone": "+972-54-327-1499",
+  "areaServed": "IL",
+  "serviceType": ["Chatbot development", "Dashboard development", "Landing page", "WhatsApp bot", "Telegram bot", "CRM integration", "Business automation"]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAE0;
+    --paper-2:#E4E0D2;
+    --ink:#15171C;
+    --steel:#5B6472;
+    --hair:#C7C2B2;
+    --red:#FF4421;
+    --red-dim:#D6390F;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:1040px;margin:0 auto;padding:0 32px;}
+
+  .display{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:900;
+    letter-spacing:-0.01em;
+    line-height:0.92;
+    text-transform:uppercase;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+
+  /* ---------- header ---------- */
+  header{
+    border-bottom:1px solid var(--hair);
+    padding:22px 0;
+    position:sticky;top:0;
+    background:var(--paper);
+    z-index:50;
+  }
+  header .wrap{display:flex;align-items:center;justify-content:space-between;}
+  .logo{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:20px;
+    text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .logo span{color:var(--red);}
+  nav{display:flex;gap:28px;}
+  nav a{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:var(--steel);
+    text-decoration:none;
+    border-bottom:1px solid transparent;
+    padding-bottom:3px;
+    transition:color .15s, border-color .15s;
+  }
+  nav a:hover, nav a:focus-visible{color:var(--ink);border-color:var(--ink);}
+  @media (max-width:640px){ nav{display:none;} }
+
+  /* ---------- hero / brief ---------- */
+  .brief{
+    padding:64px 0 56px;
+    border-bottom:1px solid var(--hair);
+  }
+  .brief-meta{
+    display:flex;
+    gap:32px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--steel);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:28px;
+    flex-wrap:wrap;
+  }
+  .brief-meta b{color:var(--ink);font-weight:500;}
+
+  h1.display{
+    font-size:clamp(40px,7vw,84px);
+    max-width:880px;
+  }
+  .strike{
+    color:var(--steel);
+    text-decoration:line-through;
+    text-decoration-color:var(--red);
+    text-decoration-thickness:3px;
+    opacity:.55;
+  }
+  .insert{color:var(--red);}
+
+  .brief-sub{
+    margin-top:28px;
+    max-width:560px;
+    font-size:17px;
+    line-height:1.6;
+    color:var(--steel);
+  }
+  .brief-sub b{color:var(--ink);font-weight:600;}
+
+  .cta-row{
+    margin-top:36px;
+    display:flex;
+    gap:16px;
+    align-items:center;
+    flex-wrap:wrap;
+  }
+  .btn{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    padding:14px 26px;
+    text-decoration:none;
+    display:inline-block;
+  }
+  .btn-primary{
+    background:var(--ink);
+    color:var(--paper);
+    border:1px solid var(--ink);
+  }
+  .btn-primary:hover{background:var(--red);border-color:var(--red);}
+  .btn-ghost{
+    color:var(--ink);
+    border-bottom:1px solid var(--ink);
+    padding:14px 0;
+  }
+  .btn-ghost:hover{color:var(--red);border-color:var(--red);}
+
+  /* ---------- ticker ---------- */
+  .ticker-strip{
+    border-bottom:1px solid var(--hair);
+    background:var(--ink);
+    overflow:hidden;
+    white-space:nowrap;
+    padding:13px 0;
+  }
+  .ticker-track{
+    display:inline-flex;
+    animation:scroll 28s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce){ .ticker-track{animation:none;} }
+  .ticker-track span{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--paper);
+    padding:0 28px;
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .ticker-track span b{color:var(--red);font-weight:500;}
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+
+  /* ---------- section heading ---------- */
+  .sec-head{
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    margin-bottom:36px;
+    padding-bottom:14px;
+    border-bottom:1px solid var(--hair);
+  }
+  .sec-no{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--red);
+  }
+  .sec-head h2{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    text-transform:uppercase;
+    font-size:clamp(26px,4vw,38px);
+  }
+
+  section{padding:64px 0;border-bottom:1px solid var(--hair);}
+
+  /* ---------- rate card / services ---------- */
+  .rate-table{width:100%;border-collapse:collapse;}
+  .rate-table tr{border-bottom:1px solid var(--hair);}
+  .rate-table tr:last-child{border-bottom:none;}
+  .rate-table td{padding:22px 0;vertical-align:top;}
+  .rate-num{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:13px;
+    color:var(--steel);
+    width:48px;
+  }
+  .rate-name{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:700;
+    font-size:22px;
+    text-transform:uppercase;
+    width:34%;
+  }
+  .rate-desc{color:var(--steel);font-size:15px;line-height:1.6;padding-right:24px;}
+  .rate-tag{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:11px;
+    text-transform:uppercase;
+    color:var(--red);
+    text-align:right;
+    white-space:nowrap;
+  }
+  @media (max-width:720px){
+    .rate-desc{display:none;}
+    .rate-name{width:auto;}
+  }
+
+  /* ---------- process / log ---------- */
+  .log{display:flex;flex-direction:column;}
+  .log-row{
+    display:grid;
+    grid-template-columns:90px 140px 1fr;
+    gap:20px;
+    padding:18px 0;
+    border-bottom:1px solid var(--hair);
+    align-items:baseline;
+  }
+  .log-row:last-child{border-bottom:none;}
+  .log-time{font-family:'IBM Plex Mono',monospace;font-size:12px;color:var(--red);}
+  .log-stage{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:700;
+    text-transform:uppercase;
+    font-size:16px;
+  }
+  .log-desc{color:var(--steel);font-size:14.5px;line-height:1.6;}
+  @media (max-width:640px){
+    .log-row{grid-template-columns:1fr;gap:4px;}
+  }
+
+  /* ---------- proof / metrics ---------- */
+  .metrics{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--hair);max-width:1040px;margin:0 auto;}
+  .metric{background:var(--paper);padding:30px 26px;}
+  .metric .num{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:900;
+    font-size:48px;
+    color:var(--ink);
+    line-height:1;
+  }
+  .metric .num span{color:var(--red);}
+  .metric .label{
+    margin-top:8px;
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--steel);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  @media (max-width:640px){ .metrics{grid-template-columns:1fr;} }
+
+  /* ---------- contract / signature ---------- */
+  .contract{
+    background:var(--paper-2);
+  }
+  .contract-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:60px;}
+  .contract-text{font-size:16px;line-height:1.7;color:var(--steel);max-width:480px;}
+  .contract-text b{color:var(--ink);font-weight:600;}
+  .sign-block{border-left:1px solid var(--hair);padding-left:40px;}
+  .sign-line{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:30px;
+    text-transform:uppercase;
+    border-bottom:2px solid var(--ink);
+    padding-bottom:10px;
+    margin-bottom:8px;
+  }
+  .sign-meta{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--steel);
+    text-transform:uppercase;
+    letter-spacing:0.04em;
+  }
+  .contact-list{margin-top:32px;display:flex;flex-direction:column;gap:10px;}
+  .contact-list a{
+    color:var(--ink);
+    text-decoration:none;
+    font-size:15px;
+    border-bottom:1px solid var(--hair);
+    padding-bottom:8px;
+    display:flex;justify-content:space-between;
+  }
+  .contact-list a span{color:var(--steel);font-family:'IBM Plex Mono',monospace;font-size:12px;text-transform:uppercase;}
+  .contact-list a:hover{color:var(--red);}
+
+  @media (max-width:720px){ .contract-grid{grid-template-columns:1fr;} .sign-block{border-left:none;padding-left:0;border-top:1px solid var(--hair);padding-top:32px;} }
+
+  footer{padding:26px 0;}
+  footer .wrap{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:11px;color:var(--steel);text-transform:uppercase;letter-spacing:0.04em;}
+
+  :focus-visible{outline:2px solid var(--red);outline-offset:2px;}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Maxim <span>Fomichev</span></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#process">Process</a>
+      <a href="#proof">Numbers</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<section class="brief">
+  <div class="wrap">
+    <div class="brief-meta">
+      <span><b>Brief no.</b> 021</span>
+      <span><b>Role:</b> automation for business</span>
+      <span><b>Status:</b> in progress</span>
+    </div>
+
+    <h1 class="display">
+      <span class="strike">Just another task on your to-do list</span><br>
+      <span class="insert">Automation that works while you sleep</span>
+    </h1>
+
+    <p class="brief-sub">
+      I build <b>chatbots, dashboards and landing pages</b> that take the busywork
+      off your plate — your team focuses on what matters, not copying data
+      between spreadsheets.
+    </p>
+
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#contact">Discuss a project</a>
+      <a class="btn-ghost" href="#process">How it works →</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker-strip" role="presentation">
+  <div class="ticker-track">
+    <span>chatbot replies in <b>3 seconds</b>, not 3 hours</span>
+    <span>dashboard updates in <b>real time</b>, not every Friday</span>
+    <span>landing page captures leads <b>24/7</b> without a sales rep</span>
+    <span>automation live in <b>as little as 5 days</b></span>
+    <span>chatbot replies in <b>3 seconds</b>, not 3 hours</span>
+    <span>dashboard updates in <b>real time</b>, not every Friday</span>
+    <span>landing page captures leads <b>24/7</b> without a sales rep</span>
+    <span>automation live in <b>as little as 5 days</b></span>
+  </div>
+</div>
+
+<section id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Services</h2>
+      <span class="sec-no">/ 01</span>
+    </div>
+    <table class="rate-table">
+      <tr>
+        <td class="rate-num">01</td>
+        <td class="rate-name">Chatbot</td>
+        <td class="rate-desc">Answers questions, takes orders, closes deals — on WhatsApp, Telegram or your website.</td>
+        <td class="rate-tag">from 5 days</td>
+      </tr>
+      <tr>
+        <td class="rate-num">02</td>
+        <td class="rate-name">Dashboard</td>
+        <td class="rate-desc">All your stats in one screen: sales, leads, funnel — updates in real time.</td>
+        <td class="rate-tag">from 7 days</td>
+      </tr>
+      <tr>
+        <td class="rate-num">03</td>
+        <td class="rate-name">Landing page</td>
+        <td class="rate-desc">One-pager that turns traffic into leads: copy, design, form — all included.</td>
+        <td class="rate-tag">from 3 days</td>
+      </tr>
+      <tr>
+        <td class="rate-num">04</td>
+        <td class="rate-name">Integration</td>
+        <td class="rate-desc">Wire the bot, CRM, dashboard and ads into one system — no manual data entry.</td>
+        <td class="rate-tag">on request</td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section id="process">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Process</h2>
+      <span class="sec-no">/ 02</span>
+    </div>
+    <div class="log">
+      <div class="log-row">
+        <div class="log-time">Day 1</div>
+        <div class="log-stage">Discovery</div>
+        <div class="log-desc">I find out which processes eat the most time and where customers drop off.</div>
+      </div>
+      <div class="log-row">
+        <div class="log-time">Day 2–3</div>
+        <div class="log-stage">Design</div>
+        <div class="log-desc">I map out the bot flow, dashboard structure or landing layout. You review and edit before anything goes live.</div>
+      </div>
+      <div class="log-row">
+        <div class="log-time">Day 4–5</div>
+        <div class="log-stage">Launch</div>
+        <div class="log-desc">I connect, test on real data and make sure it all works.</div>
+      </div>
+      <div class="log-row">
+        <div class="log-time">Ongoing</div>
+        <div class="log-stage">Tuning</div>
+        <div class="log-desc">I watch the metrics, refine the scripts and scale what works.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="proof">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Numbers</h2>
+      <span class="sec-no">/ 03</span>
+    </div>
+  </div>
+  <div class="metrics">
+    <div class="metric">
+      <div class="num">70<span>%</span></div>
+      <div class="label">of routine handled by automation</div>
+    </div>
+    <div class="metric">
+      <div class="num">5<span>d</span></div>
+      <div class="label">from idea to live</div>
+    </div>
+    <div class="metric">
+      <div class="num">24<span>/7</span></div>
+      <div class="label">the system runs round the clock</div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contract">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Contact</h2>
+      <span class="sec-no">/ 04</span>
+    </div>
+    <div class="contract-grid">
+      <p class="contract-text">
+        I work with businesses where one person does the job of three —
+        which means <b>half the tasks never get done</b>.
+        If you want a bot, dashboard or landing page to take that load off your shoulders,
+        get in touch. I reply within a day.
+      </p>
+      <div class="sign-block">
+        <div class="sign-line">Maxim Fomichev</div>
+        <div class="sign-meta">Automation for business</div>
+        <div class="contact-list">
+          <a href="mailto:max.fomichev@gmail.com">max.fomichev@gmail.com <span>email</span></a>
+          <a href="https://t.me/migdalohr" target="_blank" rel="noopener">@migdalohr <span>telegram</span></a>
+          <a href="https://wa.me/972543271499" target="_blank" rel="noopener">+972 54-327-1499 <span>whatsapp</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Maxim Fomichev</span>
+    <span>Built with automation that works</span>
+  </div>
+</footer>
+
+</body>
+</html>

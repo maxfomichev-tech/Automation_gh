@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box;}
+  body{
+    width:1200px;height:630px;
+    background:#EDEAE0;
+    font-family:'Inter',sans-serif;
+    display:flex;align-items:center;justify-content:center;
+    overflow:hidden;
+  }
+  .card{
+    width:1200px;height:630px;
+    display:flex;flex-direction:column;
+    justify-content:center;
+    padding:80px 100px;
+    position:relative;
+  }
+  .accent{
+    position:absolute;top:0;left:0;
+    width:8px;height:100%;
+    background:#FF4421;
+  }
+  .meta{
+    font-family:monospace;
+    font-size:16px;
+    color:#5B6472;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    margin-bottom:32px;
+  }
+  .meta b{color:#15171C;}
+  h1{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:900;
+    font-size:72px;
+    text-transform:uppercase;
+    line-height:0.95;
+    color:#15171C;
+    max-width:900px;
+    margin-bottom:40px;
+  }
+  .red{color:#FF4421;}
+  .sub{
+    font-size:24px;
+    color:#5B6472;
+    line-height:1.5;
+    max-width:700px;
+  }
+  .sub b{color:#15171C;font-weight:600;}
+  .footer{
+    position:absolute;bottom:60px;left:100px;right:100px;
+    display:flex;justify-content:space-between;align-items:center;
+    border-top:1px solid #C7C2B2;
+    padding-top:24px;
+  }
+  .logo{
+    font-family:'Big Shoulders Display',sans-serif;
+    font-weight:800;
+    font-size:28px;
+    text-transform:uppercase;
+    color:#15171C;
+    letter-spacing:0.02em;
+  }
+  .logo span{color:#FF4421;}
+  .url{
+    font-family:monospace;
+    font-size:16px;
+    color:#5B6472;
+    text-transform:lowercase;
+  }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="card">
+    <div class="accent"></div>
+    <div class="meta"><b>Automation</b> for business</div>
+    <h1>Automation that works <span class="red">while you sleep</span></h1>
+    <p class="sub">Chatbots, dashboards, landing pages — <b>24/7</b>, live in <b>5 days</b></p>
+    <div class="footer">
+      <div class="logo">Maxim <span>Fomichev</span></div>
+      <div class="url">maxfomichev-tech.github.io/automation</div>
+    </div>
+  </div>
+</body>
+</html>
