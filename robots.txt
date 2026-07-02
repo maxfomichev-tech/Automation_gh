@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://maxfomichev-tech.github.io/automation/sitemap.xml
+Sitemap: https://maxfomichev-tech.github.io/Automation_gh/sitemap.xml
