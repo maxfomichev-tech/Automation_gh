@@ -653,7 +653,6 @@
     <div id="chat-messages"></div>
     <form id="chat-form" style="display:none">
       <input type="text" id="chat-name" placeholder="Your name" required>
-      <input type="text" id="chat-contact" placeholder="Email or Telegram" required>
       <textarea id="chat-project" rows="3" placeholder="Briefly describe your project"></textarea>
       <button type="submit">Send to Telegram →</button>
     </form>
@@ -845,10 +844,9 @@ RULES:
   chatForm.addEventListener('submit', function(e) {
     e.preventDefault();
     const name = document.getElementById('chat-name').value.trim();
-    const contact = document.getElementById('chat-contact').value.trim();
     const project = document.getElementById('chat-project').value.trim();
 
-    if (!name || !contact) return;
+    if (!name) return;
 
     const text = encodeURIComponent('Hi, I\'m ' + name + '. ' + (project ? project : 'I\'d like to discuss a project.'));
     window.open('https://t.me/migdalohr?text=' + text, '_blank');
