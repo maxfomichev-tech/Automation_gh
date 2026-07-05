@@ -692,7 +692,7 @@ RULES:
    - Asked "how to start" or similar
    - Asked 2+ questions in a row about your services
 8. Never offer the form on the first message unless it's a direct inquiry.
-9. When offering the form, say exactly: "Want to discuss your project? Here's a short form." Do NOT write "Fill out the form" — a button will appear automatically.`;
+9. When offering the form, you MUST end your response with exactly this phrase: "Want to discuss your project? Here's a short form." Nothing else after that.`;
 
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
@@ -715,7 +715,7 @@ RULES:
         .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
         .replace(/\n/g, '<br>');
 
-      if (text.includes('Fill out the form')) {
+      if (text.includes("Here's a short form")) {
         html += '<br><button onclick="window.showChatForm()" style="margin-top:8px;padding:8px 16px;background:var(--red);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:IBM Plex Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;">Fill out the form</button>';
       }
 
