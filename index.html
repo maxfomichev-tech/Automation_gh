@@ -807,9 +807,9 @@ RULES:
     if (chatHistory.length === 0) {
       const lang = navigator.language.startsWith('ru') ? 'ru' : navigator.language.startsWith('he') ? 'he' : 'en';
       const greetings = {
-        ru: 'Привет! Я ваш ИИ-ассистент. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?',
-        he: '!שלום אני העוזר הוירטואלי שלכם. עוזר בשאלות על צ\'אט בוטים, לוחות מחוונים ודפי נחיתה. מה מעניין אתכם',
-        en: 'Hi! I\'m your AI assistant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?'
+        ru: 'Привет! Я Макс — ваш консультант. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?',
+        he: '!שלום אני מקס — היועץ שלכם. עוזר בשאלות על צ\'אט בוטים, לוחות מחוונים ודפי נחיתה. מה מעניין אתכם',
+        en: 'Hi! I\'m Max — your consultant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?'
       };
       addMessage('bot', greetings[lang] || greetings.en);
     }
