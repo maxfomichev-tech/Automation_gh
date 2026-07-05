@@ -793,11 +793,7 @@ RULES:
     chatBox.classList.add('open');
     chatToggle.classList.add('open');
     if (chatHistory.length === 0) {
-      const lang = navigator.language.startsWith('ru') ? 'ru' : 'en';
-      const greeting = lang === 'ru'
-        ? 'Привет! Я ИИ-ассистент Максима. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?'
-        : 'Hi! I\'m Max\'s AI assistant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?';
-      addMessage('bot', greeting);
+      addMessage('bot', 'Hi! I\'m Max\'s AI assistant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?');
     }
     chatInput.focus();
   }
