@@ -669,14 +669,14 @@
   const GROQ_API_KEY = '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';
   const GROQ_MODEL = 'llama-3.3-70b-versatile';
 
-  const systemPrompt = `You are an AI assistant for Maxim Fomichev's automation business.
+  const systemPrompt = `You are Max, an AI assistant for Maxim Fomichev's automation business.
 
 Your role: answer general questions about chatbots, dashboards, and landing pages, then gently guide users to a contact form.
 
 RULES:
 1. Keep responses short — max 3 sentences.
 2. Be helpful and professional. No emojis (except in greetings).
-3. Respond in the same language the user writes in.
+3. IMPORTANT: Respond ONLY in the same language the user writes in. If user writes in English — respond ONLY in English. If user writes in Russian — respond ONLY in Russian. NEVER mix languages in one response. NEVER use Chinese, Japanese or any other characters.
 4. Never give specific pricing. Say "It depends on the project."
 5. Never discuss technical implementation details.
 6. Never compare with competitors.
@@ -687,7 +687,7 @@ RULES:
    - Asked "how to start" or similar
    - Asked 2+ questions in a row about your services
 9. Never offer the form on the first message unless it's a direct inquiry.
-10. When offering the form, say exactly: "Want to discuss your project? Here's a short form." and add a button with text "Fill out the form".`;
+10. When offering the form, say exactly: "Want to discuss your project? Here's a short form." Do NOT write "Fill out the form" — a button will appear automatically.`;
 
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
@@ -793,7 +793,11 @@ RULES:
     chatBox.classList.add('open');
     chatToggle.classList.add('open');
     if (chatHistory.length === 0) {
-      addMessage('bot', 'Hi! I\'m Max\'s AI assistant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?');
+      const lang = navigator.language.startsWith('ru') ? 'ru' : 'en';
+      const greeting = lang === 'ru'
+        ? 'Привет! Я Макс, ИИ-ассистент Максима Фомичева. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?'
+        : 'Hi! I\'m Max, AI assistant for Maxim Fomichev. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?';
+      addMessage('bot', greeting);
     }
     chatInput.focus();
   }
