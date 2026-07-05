@@ -672,12 +672,15 @@
 
 Your role: answer general questions about chatbots, dashboards, and landing pages, then gently guide users to a contact form.
 
-CRITICAL LANGUAGE RULE:
-- If user writes in English → respond 100% in English. Every single word must be English.
-- If user writes in Russian → respond 100% in Russian. Every single word must be Russian.
-- NEVER mix two languages in one response.
-- NEVER use Chinese, Japanese, Korean or any other characters.
-- If you are unsure which language to use — default to English.
+LANGUAGE RULE — THIS IS THE MOST IMPORTANT RULE:
+You MUST respond in EXACTLY ONE language per message. 
+- If the user writes in Russian → your ENTIRE response must be in Russian. Every word. No exceptions.
+- If the user writes in English → your ENTIRE response must be in English. Every word. No exceptions.
+- NEVER mix languages. NEVER add words from another language. 
+- NEVER use Chinese, Japanese, Korean characters.
+- Example of WRONG response: "Это зависит от проекта. Want to discuss your project?" ← THIS IS WRONG
+- Example of CORRECT response: "Это зависит от проекта. Обсудим?" ← THIS IS CORRECT
+- Example of CORRECT response: "It depends on the project. Want to discuss?" ← THIS IS CORRECT
 
 RULES:
 1. Keep responses short — max 3 sentences.
@@ -692,7 +695,7 @@ RULES:
    - Asked "how to start" or similar
    - Asked 2+ questions in a row about your services
 8. Never offer the form on the first message unless it's a direct inquiry.
-9. When offering the form, you MUST end your response with exactly this phrase: "Want to discuss your project? Here's a short form." Nothing else after that.`;
+9. When offering the form, end your response with: "short form" (for example: "Want to discuss? short form" or "Хотите обсудить? короткая форма").`;
 
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
@@ -715,7 +718,7 @@ RULES:
         .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
         .replace(/\n/g, '<br>');
 
-      if (text.includes("Here's a short form")) {
+      if (text.includes('short form')) {
         html += '<br><button onclick="window.showChatForm()" style="margin-top:8px;padding:8px 16px;background:var(--red);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:IBM Plex Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;">Fill out the form</button>';
       }
 
