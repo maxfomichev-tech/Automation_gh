@@ -694,8 +694,7 @@ RULES:
    - Said they want/need a chatbot, dashboard, or landing page
    - Asked "how to start" or similar
    - Asked 2+ questions in a row about your services
-8. Never offer the form on the first message unless it's a direct inquiry.
-9. When offering the form, ALWAYS end your response with the EXACT English phrase "short form" — even if the rest of your response is in Russian. For example: "Мы можем обсудить детали. short form" or "Let's discuss. short form". The phrase "short form" must always be in English.`;
+8. Never offer the form on the first message unless it's a direct inquiry.`;
 
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
@@ -718,7 +717,9 @@ RULES:
         .replace(/\*\*(.*?)\*\*/g, '<b>$1</b>')
         .replace(/\n/g, '<br>');
 
-      if (text.includes('short form')) {
+      const lowerText = text.toLowerCase();
+      const showFormTriggers = ['want to discuss', 'хотите обсудить', 'обсудить ваш', 'обсудить проект', 'let\'s discuss', 'давайте обсудим', 'ready to help', 'готов помочь'];
+      if (showFormTriggers.some(trigger => lowerText.includes(trigger))) {
         html += '<br><button onclick="window.showChatForm()" style="margin-top:8px;padding:8px 16px;background:var(--red);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:IBM Plex Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;">Fill out the form</button>';
       }
 
