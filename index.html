@@ -676,11 +676,13 @@ LANGUAGE RULE — THIS IS THE MOST IMPORTANT RULE:
 You MUST respond in EXACTLY ONE language per message. 
 - If the user writes in Russian → your ENTIRE response must be in Russian. Every word. No exceptions.
 - If the user writes in English → your ENTIRE response must be in English. Every word. No exceptions.
+- If the user writes in Hebrew → your ENTIRE response must be in Hebrew. Every word. No exceptions.
 - NEVER mix languages. NEVER add words from another language. 
 - NEVER use Chinese, Japanese, Korean characters.
-- Example of WRONG response: "Это зависит от проекта. Want to discuss your project?" ← THIS IS WRONG
-- Example of CORRECT response: "Это зависит от проекта. Обсудим?" ← THIS IS CORRECT
-- Example of CORRECT response: "It depends on the project. Want to discuss?" ← THIS IS CORRECT
+- If unsure — default to English.
+
+IMPORTANT RULE ABOUT THE FORM:
+You have a built-in form that appears INSIDE the chat. NEVER tell users to "go to the website" or "fill out the form on the website". Instead, when user shows interest, just say "Want to discuss? Here's a short form" — a button will appear automatically in the chat.
 
 RULES:
 1. Keep responses short — max 3 sentences.
@@ -689,12 +691,8 @@ RULES:
 4. Never discuss technical implementation details.
 5. Never compare with competitors.
 6. Stay on topic — automation only. If asked about something else, politely redirect.
-7. Only offer the contact form when the user shows genuine interest:
-   - Asked about pricing or timeline
-   - Said they want/need a chatbot, dashboard, or landing page
-   - Asked "how to start" or similar
-   - Asked 2+ questions in a row about your services
-8. Never offer the form on the first message unless it's a direct inquiry.`;
+7. After 2+ questions from the user about your services, offer the form by saying: "Want to discuss? Here's a short form."
+8. If user asks about pricing, timeline, or says they want a chatbot/dashboard/landing — offer the form immediately.`;
 
   const chatMessages = document.getElementById('chat-messages');
   const chatInput = document.getElementById('chat-input');
@@ -718,7 +716,12 @@ RULES:
         .replace(/\n/g, '<br>');
 
       const lowerText = text.toLowerCase();
-      const showFormTriggers = ['want to discuss', 'хотите обсудить', 'обсудить ваш', 'обсудить проект', 'let\'s discuss', 'давайте обсудим', 'ready to help', 'готов помочь'];
+      const showFormTriggers = [
+        'want to discuss', 'here\'s a short form', 'short form',
+        'хотите обсудить', 'обсудим', 'оставить заявку',
+        'responder', 'discutir', 'formulario',
+        'want to discuss', 'here is a short form'
+      ];
       if (showFormTriggers.some(trigger => lowerText.includes(trigger))) {
         html += '<br><button onclick="window.showChatForm()" style="margin-top:8px;padding:8px 16px;background:var(--red);color:var(--paper);border:none;border-radius:6px;cursor:pointer;font-family:IBM Plex Mono,monospace;font-size:12px;text-transform:uppercase;letter-spacing:0.04em;">Fill out the form</button>';
       }
@@ -802,11 +805,13 @@ RULES:
     chatBox.classList.add('open');
     chatToggle.classList.add('open');
     if (chatHistory.length === 0) {
-      const lang = navigator.language.startsWith('ru') ? 'ru' : 'en';
-      const greeting = lang === 'ru'
-        ? 'Привет! Я Макс, ИИ-ассистент Максима Фомичева. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?'
-        : 'Hi! I\'m Max, AI assistant for Maxim Fomichev. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?';
-      addMessage('bot', greeting);
+      const lang = navigator.language.startsWith('ru') ? 'ru' : navigator.language.startsWith('he') ? 'he' : 'en';
+      const greetings = {
+        ru: 'Привет! Я ваш ИИ-ассистент. Помогаю с вопросами о чат-ботах, дашбордах и лендингах. Чем интересуетесь?',
+        he: '!שלום אני העוזר הוירטואלי שלכם. עוזר בשאלות על צ\'אט בוטים, לוחות מחוונים ודפי נחיתה. מה מעניין אתכם',
+        en: 'Hi! I\'m your AI assistant. I can help with questions about chatbots, dashboards, and landing pages. What are you interested in?'
+      };
+      addMessage('bot', greetings[lang] || greetings.en);
     }
     chatInput.focus();
   }
