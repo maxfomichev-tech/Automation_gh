@@ -353,6 +353,7 @@
     display:flex;align-items:center;justify-content:center;
     box-shadow:0 4px 16px rgba(0,0,0,.2);
     transition:background .2s,transform .2s;
+    padding:0;
   }
   #chat-toggle:hover{background:var(--red);transform:scale(1.05);}
   #chat-toggle .chat-close{display:none;}
@@ -642,7 +643,7 @@
 <!-- Chat Widget -->
 <div id="chat-widget">
   <button id="chat-toggle">
-    <span class="chat-icon">🤖</span>
+    <span class="chat-icon"><img src="chat-icon.svg" alt="Chat" width="28" height="28"></span>
     <span class="chat-close">✕</span>
   </button>
   <div id="chat-box">
